@@ -29,10 +29,16 @@ function createRequestObject() {
 function sendRequest() {
 	
 	var rnd = Math.random();
-	var name = escape(document.getElementById("name").value);
+	var nome = escape(document.getElementById("nome").value);
+	var cargo = escape(document.getElementById("cargo").value);
 	var email = escape(document.getElementById("email").value);
+	var telefone = escape(document.getElementById("telefone").value);
+	var empresa = escape(document.getElementById("empresa").value);
+	var cnpj = escape(document.getElementById("cnpj").value);
+	var tipo = escape(document.getElementById("tipo").value);
+	var solucao = escape(document.getElementById("solucao").value);
 	var subject = escape(document.getElementById("subject").value);
-	var body = document.getElementById("body").value;
+	var descricao = document.getElementById("descricao").value;
 
 	try{
     http.open('POST',  'php/contactform.php');
@@ -49,8 +55,16 @@ function sendRequest() {
 function sendRequest_booking() {
 	
 	var rnd = Math.random();
-	var name = escape(document.getElementById("name").value);
+	var nome = escape(document.getElementById("nome").value);
+	var cargo = escape(document.getElementById("cargo").value);
 	var email = escape(document.getElementById("email").value);
+	var telefone = escape(document.getElementById("telefone").value);
+	var empresa = escape(document.getElementById("empresa").value);
+	var cnpj = escape(document.getElementById("cnpj").value);
+	var tipo = escape(document.getElementById("tipo").value);
+	var solucao = escape(document.getElementById("solucao").value);
+	var subject = escape(document.getElementById("subject").value);
+	var descricao = document.getElementById("descricao").value;
 	
 	var surname = escape(document.getElementById("surname").value);
 	var arrival = escape(document.getElementById("arrival").value);
@@ -78,9 +92,16 @@ function sendRequest_booking() {
 function sendRequest_loans() {
 	
 	var rnd = Math.random();
-	var name = escape(document.getElementById("name").value);
-	var name_s = escape(document.getElementById("name_s").value);
+	var nome = escape(document.getElementById("nome").value);
+	var cargo = escape(document.getElementById("cargo").value);
+	var email = escape(document.getElementById("email").value);
+	var telefone = escape(document.getElementById("telefone").value);
+	var empresa = escape(document.getElementById("empresa").value);
+	var cnpj = escape(document.getElementById("cnpj").value);
+	var tipo = escape(document.getElementById("tipo").value);
+	var solucao = escape(document.getElementById("solucao").value);
 	var subject = escape(document.getElementById("subject").value);
+	var descricao = document.getElementById("descricao").value;
 
 	try{
     http.open('POST',  'php/contactform_loans.php');
@@ -215,23 +236,95 @@ function check_values() {
 
 	
 	var errors=0;
-     if($j('#contactform #name').val()!=undefined)
-	 if($j('#contactform #name').val()=='') {
-	 	var hasClass=$j('#contactform #name').parent().find(".error").hasClass("error");
+     if($j('#contactform #nome').val()!=undefined)
+	 if($j('#contactform #nome').val()=='') {
+	 	var hasClass=$j('#contactform #nome').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform #name').parent().append('<label for="contactname" generated="true" class="error">Please enter your name</label>');
-			$j('#contactform #name').focus();
+	 	    $j('#contactform #nome').parent().append('<label for="contactname" generated="true" class="error">Campo obrigatório</label>');
+			$j('#contactform #nome').focus();
 			//return false;
 			errors++;
 		}
 		else
-		$j('#contactform #name').parent().find(".error").remove();
+		$j('#contactform #nome').parent().find(".error").remove();
+
+	     if($j('#contactform #cargo').val()!=undefined)
+	 if($j('#contactform #cargo').val()=='') {
+	 	var hasClass=$j('#contactform #cargo').parent().find(".error").hasClass("error");
+	 	if(!hasClass)
+	 	    $j('#contactform #cargo').parent().append('<label for="contactname" generated="true" class="error">Campo obrigatório</label>');
+			$j('#contactform #cargo').focus();
+			//return false;
+			errors++;
+		}
+		else
+		$j('#contactform #cargo').parent().find(".error").remove();
+
+		     if($j('#contactform #telefone').val()!=undefined)
+	 if($j('#contactform #cargo').val()=='') {
+	 	var hasClass=$j('#contactform #telefone').parent().find(".error").hasClass("error");
+	 	if(!hasClass)
+	 	    $j('#contactform #telefone').parent().append('<label for="contactname" generated="true" class="error">Campo obrigatório</label>');
+			$j('#contactform #telefone').focus();
+			//return false;
+			errors++;
+		}
+		else
+		$j('#contactform #telefone').parent().find(".error").remove();
+
+		     if($j('#contactform #empresa').val()!=undefined)
+	 if($j('#contactform #cargo').val()=='') {
+	 	var hasClass=$j('#contactform #empresa').parent().find(".error").hasClass("error");
+	 	if(!hasClass)
+	 	    $j('#contactform #empresa').parent().append('<label for="contactname" generated="true" class="error">Campo obrigatório</label>');
+			$j('#contactform #empresa').focus();
+			//return false;
+			errors++;
+		}
+		else
+		$j('#contactform #empresa').parent().find(".error").remove();
+
+		     if($j('#contactform #cnpj').val()!=undefined)
+	 if($j('#contactform #cargo').val()=='') {
+	 	var hasClass=$j('#contactform #cnpj').parent().find(".error").hasClass("error");
+	 	if(!hasClass)
+	 	    $j('#contactform #cnpj').parent().append('<label for="contactname" generated="true" class="error">Campo obrigatório</label>');
+			$j('#contactform #cnpj').focus();
+			//return false;
+			errors++;
+		}
+		else
+		$j('#contactform #cnpj').parent().find(".error").remove();
+
+		     if($j('#contactform #tipo').val()!=undefined)
+	 if($j('#contactform #tipo').val()=='') {
+	 	var hasClass=$j('#contactform #tipo').parent().find(".error").hasClass("error");
+	 	if(!hasClass)
+	 	    $j('#contactform #tipo').parent().append('<label for="contactname" generated="true" class="error">Campo obrigatório</label>');
+			$j('#contactform #tipo').focus();
+			//return false;
+			errors++;
+		}
+		else
+		$j('#contactform #tipo').parent().find(".error").remove();
+
+		     if($j('#contactform #solucao').val()!=undefined)
+	 if($j('#contactform #cargo').val()=='') {
+	 	var hasClass=$j('#contactform #solucao').parent().find(".error").hasClass("error");
+	 	if(!hasClass)
+	 	    $j('#contactform #solucao').parent().append('<label for="contactname" generated="true" class="error">Campo obrigatório</label>');
+			$j('#contactform #solucao').focus();
+			//return false;
+			errors++;
+		}
+		else
+		$j('#contactform #solucao').parent().find(".error").remove();
 		
 		if($j('#contactform #email').val()!=undefined)
 		if(validate_email($j('#contactform #email').val())==false ) {
 		var hasClass=$j('#contactform #email').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform #email').parent().append('<label for="contactname" generated="true" class="error">Please enter a valid email address</label>');	
+	 	    $j('#contactform #email').parent().append('<label for="contactname" generated="true" class="error">Campo obrigatório</label>');	
 			$j('#contactform #email').focus();
 			//return false;
 			errors++;
@@ -252,23 +345,23 @@ function check_values() {
 		else
 		$j('#contactform #subject').parent().find(".error").remove();
 		
-		if($j('#contactform #body').val()!=undefined)
-		if($j('#contactform #body').val()==''){
-		var hasClass=$j('#contactform #body').parent().find(".error").hasClass("error");
+		if($j('#contactform #descricao').val()!=undefined)
+		if($j('#contactform #descricao').val()==''){
+		var hasClass=$j('#contactform #descricao').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform #body').parent().append('<label for="contactname" generated="true" class="error">You need to enter a message!</label>');	
-			$j('#contactform #body').focus();
+	 	    $j('#contactform #descricao').parent().append('<label for="contactname" generated="true" class="error">You need to enter a message!</label>');	
+			$j('#contactform #descricao').focus();
 			//return false;
 			errors++;
 		}
 		else
-		$j('#contactform #body').parent().find(".error").remove();
+		$j('#contactform #descricao').parent().find(".error").remove();
 		
 	
 
 	if(errors==0) {
 			document.getElementById("submit").disabled=true;
-			document.getElementById("submit").value='Please Wait..';
+			document.getElementById("submit").value='Por favor, espere..';
 			sendRequest();
 	}
 }
@@ -283,17 +376,17 @@ function check_values_loans() {
 	var subject = '';
 	var name_s = '';
 	
-	if(typeof $j('#contactform #name').val() != "undefined" )
+	if(typeof $j('#contactform #nome').val() != "undefined" )
 	{
-	 name = document.getElementById("name").value;
+	 nome = document.getElementById("nome").value;
 	}
 	if(typeof $j('#contactform #subject').val() != "undefined" )
 	{
 	 subject = document.getElementById("subject").value;
 	}
-	if(typeof $j('#contactform #name_s').val() != "undefined" )
+	if(typeof $j('#contactform #nome_s').val() != "undefined" )
 	{
-	 name_s = document.getElementById("name_s").value;
+	 nome_s = document.getElementById("nome_s").value;
 	}
 
 	
